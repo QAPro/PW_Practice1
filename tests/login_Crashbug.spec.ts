@@ -8,4 +8,6 @@ test('test', async ({ page }) => {
   await page.getByTestId('login-form-password-input').click();
   await page.getByTestId('login-form-password-input').fill('Testing1!');
   await page.getByTestId('login-form-submit-button').click();
+  await expect(page.locator('.site-header')).toBeVisible();
+  await expect(page.getByRole('button')).toContainText('crashbug');import { test, expect } from '@playwright/test';
 });
